@@ -20,7 +20,7 @@ import json,sys,time
 # scraperwiki.sql.select("* from data where 'name'='peter'")
 
 
-SCRAPERWIKI_DATABASE_NAME = 'data.sqlite'
+# SCRAPERWIKI_DATABASE_NAME = 'data.sqlite'
 
 base = 'https://mangakakalot.com/'
 
@@ -52,7 +52,7 @@ def mangalist():
         for manga in manga_list.find('div.list-truyen-item-wrap'):
             detail = manga.find('a',first=True)
             manga_name = detail.attrs['title']
-            print(f'Finding the details of {manga_name}')
+            print('Finding the details of '+ manga_name)
             manga_data[manga_name] = {}
             manga_data['link']=detail.attrs['href']
             manga_data['icon']=detail.find('img',first=True).attrs['src']
